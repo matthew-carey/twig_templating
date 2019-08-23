@@ -1,5 +1,4 @@
 <?php
-
 #ini_set('display_errors',1); # uncomment if you need debugging
 
 spl_autoload_register(function ($classname) {
@@ -21,7 +20,4 @@ $loader = new \Twig\Loader\FilesystemLoader('templates');
 $twig = new \Twig\Environment($loader, [
     'cache' => 'cache',
 ]);
-
-echo $twig->render('home.html', ['name' => 'Media Group Friends']);
-
 ?>
