@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% block head %}
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>{% block title %}{% endblock %}</title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="">
+    {% endblock %}
+  </head>
+  <body>
+    <div id="header">
+      {% block header %}
+        <a class="pull-right" href="https://www.west.com/">
+          <img src="//forms.westuc.com/common/img/logo_transitional_black.png" />
+        </a>
+      {% endblock %}
+    </div>
+    <div id="content">{% block content %}{% endblock %}</div>
+    <div id="footer">
+      {% block footer %}
+        <p>&copy; West | <a href="https://www.west.com/legal-privacy" id="a_corp_legal" target="_blank">Legal &amp; Privacy</a>.</p>
+      {% endblock %}
+    </div>
+  </body>
+</html>

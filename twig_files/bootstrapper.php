@@ -17,6 +17,6 @@ spl_autoload_register(function ($classname) {
 
 $loader = new \Twig\Loader\FilesystemLoader('../twig_files/templates');
 $twig = new \Twig\Environment($loader, [
-    'cache' => 'cache',
+    //'cache' => 'cache',
 ]);
 ?>

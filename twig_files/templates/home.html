@@ -1,1 +1,38 @@
-Hello, {{ name }}.
+{% extends "layout.html" %}
+
+{% block title %}Example Page{% endblock %}
+
+{% block head %}
+  {{ parent() }}
+  <style type="text/css">
+    table { 
+      width: 400px; 
+      border: 2px solid #000; 
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+  <h1>{{ block('title') }}</h1>
+  <p>Hello, {{ name }}. You are {{ age }} years old.</p>
+
+  {% if age > 15 %}
+    <br />You are over the age of 30!<br /><br />
+  {% endif %}
+
+  <table>
+    <thead><tr><th>Name</th><th>Age</th></tr></thead>
+    <tbody>
+  {% for user in users %}
+    <tr>
+      <td>{{ user.name }}</td>
+      {% if user.age > 12 %} 
+        <td style="color:blue;">{{ user.age }}</td>
+        {% else %}
+        <td style="color:orange;">{{ user.age }}</td>
+      {% endif %}
+    </tr>
+  {% endfor %}
+  </tbody>
+  </table>
+{% endblock %}
