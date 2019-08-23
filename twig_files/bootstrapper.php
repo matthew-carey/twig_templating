@@ -3,7 +3,7 @@
 
 spl_autoload_register(function ($classname) {
     $dirs = array (
-        'Twig-2.11.3/'
+        '/www/intercall/customsites/twigtest/twig_files/Twig-2.11.3/'
     );
 
     foreach ($dirs as $dir) {
@@ -13,10 +13,9 @@ spl_autoload_register(function ($classname) {
             break;
         }
     }
-
 });
 
-$loader = new \Twig\Loader\FilesystemLoader('templates');
+$loader = new \Twig\Loader\FilesystemLoader('../twig_files/templates');
 $twig = new \Twig\Environment($loader, [
     'cache' => 'cache',
 ]);
