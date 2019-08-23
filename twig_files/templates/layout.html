@@ -1,3 +1,4 @@
+{% block body %}
 <!DOCTYPE html>
 <html>
   <head>
@@ -5,24 +6,143 @@
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <title>{% block title %}{% endblock %}</title>
-      <meta name="description" content="">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="">
+        <!-- META -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="cache-control" content="no-cache" />
+        <meta http-equiv="expires" content="0" />
+        <meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex,NOODP,NOYDIR" />
+        <meta name="author" content="Media Group" />
+        <meta name="version" content="" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width">
+        <!-- CSS -->
+        <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans|Roboto:100,300,400,700">
+        <style type="text/css">
+          /* COLOR PALETTE */
+          /*
+          -- Primary --
+          #582D82
+          #00B5E2
+          #8EC853
+          */
+
+          /*
+          -- Secondary --
+          #AFC5CD
+          #75868C
+          #3A4448
+          #3DA1AE
+          #00A880
+          #F57F29
+          #F9C20A
+          */
+
+          /*  
+          -- Gradient -- 
+          #00B5E2
+          #5BC093
+          #8EC853
+          */
+
+          html {
+            position: relative;
+            min-height: 100%;
+          }
+
+          body{
+            font-family:"roboto",Arial;
+            color:#333;
+            margin-bottom:172px;
+          }
+
+          .navbar-fixed-top {
+            opacity: .9;
+          }
+
+          .form-horizontal .control-label {
+          text-align: left;
+          }
+
+          input[type="submit"] {
+          font-size: 14px;
+          font-weight: normal;
+          line-height: 20px;
+          width:80%;
+          }
+
+          .btn-primary, .btn-primary:hover{
+            background-color:#00B5E2;
+            border-color:#00B5E2;
+          }
+
+
+          h1{font-size: 30px; color:#582D82;}
+          h2{font-size: 22px; color:#00B5E2; }
+          h3{font-size: 18px;}
+
+          .badge{min-width:10px;text-align:center;}
+          .badge-warning{color:#000;}
+          .badge-success{background-color:#56ba48;}
+          .badge-important{background-color:#ee1c25;}
+
+          fieldset{
+            background-color:#efefef;
+            border:2px solid #dfdfdf;
+            padding:20px;
+            margin-top:0;
+            margin-bottom:12px;
+            width:80%;
+          }
+
+          .reqField {
+          color:#ee1c25;
+          font-size:12px;
+          font-style:italic;
+          font-variant:normal;
+          font-weight:normal;
+          line-height:normal;
+          vertical-align:text-top;
+          }
+
+          #footer{
+          position:absolute;
+          bottom:0;
+          width:100%;
+          height:150px;
+          padding: 20px 0px 20px 0px;
+          background-color:#592d82;
+          color:#fff;
+          font-size:12px;
+          }
+
+          #footer a {color:#fff;}
+
+          .c-logo {margin:5px 5px 5px 35px;}
+          .row-odd {background-color:#dfdfdf;}
+          textarea{min-height:64px;}
+
+        </style>
+        <!-- JavaScript -->
+        <script src="//code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     {% endblock %}
   </head>
   <body>
-    <div id="header">
-      {% block header %}
-        <a class="pull-right" href="https://www.west.com/">
-          <img src="//forms.westuc.com/common/img/logo_transitional_black.png" />
-        </a>
-      {% endblock %}
-    </div>
-    <div id="content">{% block content %}{% endblock %}</div>
-    <div id="footer">
-      {% block footer %}
-        <p>&copy; West | <a href="https://www.west.com/legal-privacy" id="a_corp_legal" target="_blank">Legal &amp; Privacy</a>.</p>
-      {% endblock %}
-    </div>
+    {% include 'header.html' %}
+    <!-- main -->
+    <main role="main">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-8 col-md-8 offset-md-1">
+            {% block content %}{% endblock %}
+          </div>
+        </div>
+      </div>
+    </main>
+    {% include 'footer.html' %}
   </body>
 </html>
+{% endblock %}
